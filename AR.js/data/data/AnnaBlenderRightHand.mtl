@@ -1,0 +1,12 @@
+# Blender MTL File: 'Earth_Model.blend'
+# Material Count: 1
+
+newmtl lambert2SG.010
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 0.690000 0.380000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 0.000000
+illum 6
