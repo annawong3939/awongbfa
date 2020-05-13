@@ -1,3 +1,127 @@
+# 2.2.2
+
+- Restored old camera constraints, was giving better performances for some devices but worst for others.
+
+# 2.2.0
+
+- it's now possible to track markers with white background and black shapes, using `labelingMode: white_region;` property on `arjs` component (thanks to @umutto)
+- in location based is now possible to simulate altitude, longitude and latitude for user position (thanks to @cmcfadden)
+- default package script for jsdelvr (thanks to @benalfree)
+
+# 2.1.8
+
+- handle y position (height) of content in Location Based, using `position` property of A-FRAME
+
+# 2.1.7
+
+- enhanced `distance` property, now calculating combined distance for latitude/longitude
+
+# 2.1.6
+
+- set distance in `distance` property of `gps-entity-place` (location based) as z axis (previously was x axis)
+
+# 2.1.5
+
+- added `distance` and `distanceMsg` properties to `gps-entity-place` (location based)
+- added new example for distance property
+- added new example for a `gps-entity-place` that is always facing the user (location based)
+- fixed error when source is image or video and not camera
+- enhanced docs
+
+# 2.1.4
+
+- fixed wrong positioning of content on markers
+
+# 2.1.3
+
+- fixed a bug that causes Overconstrained Error on desktop
+- cleaned repo (removed data like videos and heavy files)
+
+# 2.1.0
+
+- Removed support for Google Tango (obsolete and no more supported by Google)
+- Removed support for Aruco markers
+- Fixed loader bug on location based examples
+- Merged PR https://github.com/jeromeetienne/AR.js/pull/673 and https://github.com/jeromeetienne/AR.js/pull/666
+- Fixed documentation
+- Cleaned repo, preparing for next release
+
+# 2.0.8
+
+- Fixed bug on location-based while added places via HTML
+- Added example of location-based using only HTML
+- Added loader during the time between gps-camera initialization and gps-entity-place add
+
+# 2.0.5
+
+- Fixed a bug on location-based statically add of places via script
+
+# 2.0.4
+
+- Fixed motion and orientation sensors permission for iOS 13+ devices
+
+# 2.0.1
+
+- Fixed location-based files build
+- Removed unuseful imports on location-based examples
+
+# 2.0.0
+
+- Introduced Location Based Augmented Reality adding new `aframe` custom components (`gps-entity-place`, `gps-camera`, `gps-camera-debug`)
+- Added new and updated documentation
+- Added examples for Location Based AR
+- Reduced repository size deleting unuseful code
+
+# 1.7.8
+
+(Release drafted for problems with the release flow. No change from previous version)
+
+# 1.7.7
+
+- added event when camera video stream has been appended to the DOM tree (`arjs-video-loaded`)
+
+# 1.7.5
+
+- added events for camera initialization success/error (`camera-init`, `camera-error`)
+- enhanced Debug UI style
+- minor documentation fixes
+
+# 1.7.2
+
+- updated `three.js` dependency to `r103` version
+- minor documentation fixes
+- replace all rawgit URLs (learn more at https://rawgit.com/)
+
+# 1.7.1
+
+- added possibility to change border marker color in marker generator
+
+# 1.7.0
+
+- optionally manage smooth parameter (for video entity glitches and similar problems)
+- generate .patt files keeping uploaded image name
+- enhanced marker generator
+- reduce build size
+
+# 1.6.3-dev
+
+- added a ```npm run build``` script for travis
+
+# 1.6.2
+
+- Adds TravisCI config with NPM deployment configured - thanks @joestrong -
+[#344](https://github.com/jeromeetienne/AR.js/pull/344)
+
+# 1.6.1
+
+## aframe-ar.js
+
+- aframe-ar.js - `<a-marker>` elements will emit `markerFound` and `markerLost` events - thanks @nikolaymihaylov! Pull Request [#303](https://github.com/jeromeetienne/AR.js/pull/303)
+
+## Demos
+
+- Created [an example](https://jeromeetienne.github.io/AR.js/aframe/examples/marker-events.html) that demonstrates emitting events when markers are found and lost, and registering the respective event listeners.
+
 # 1.6.0
 
 - implemented patternRatio in aframe/three.js - a way to reduce the ugly black border

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+<!-- include aframe-ar.js -->
+<script src="../build/aframe-ar.js"></script>
+
+<body style='margin : 0px; overflow: hidden; font-family: Monospace;'><div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
+	<a></a>
+</div>
+	<a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+		<!-- handle unknown marker -->
+		<!-- <a-marker type='unknown'>
+			<a-box depth="1" height="1" width="1" position='0 0.5 0' material='opacity: 0.5; side:double; color:blue;'></a-box>
+		</a-marker> -->
+    <a-scene embedded arjs='patternRatio: 0.75'>
+        
+      <a-assets>
+        <!-- import obj test export from maya: obj & mtl  -->
+        <a-asset-item id="Bird" src="models/GLTF/AnnaBird.gltf"></a-asset-item>
+        <a-asset-item id="Rhino" src="models/GLTF/AnnaRhino.gltf"></a-asset-item>
+        <a-asset-item id="Turtle" src="models/GLTF/AnnaTurtle.gltf"></a-asset-item>
+        <a-asset-item id="Earth" src="models/GLTF/AnnaEarth.gltf"></a-asset-item>
+<!--        <a-asset-item id="AnnaEarth-mtl" src="../../data/data/skull-obj/AnnaEarth.mtl"></a-asset-item>-->
+        
+        <!-- import male02: obj & mtl  -->
+<!--
+        <a-asset-item id="male-obj" src="../../data/data/male02/male02.obj"></a-asset-item>
+        <a-asset-item id="male-mtl" src="../../data/data/male02/male02.mtl"></a-asset-item>
+-->
+         
+        <!-- import Skull gtlf (embeded image texture)  -->
+<!--        <a-asset-item id="Anna_EarthTest2" src="../../data/data/skull-obj/AnnaEarth.gltf"></a-asset-item>-->
+          
+        <!-- import Skull gtlf (animation)  -->
+<!--        <a-asset-item id="skull-ani" src="../../data/data/skull-obj/skullanimation2.gltf"></a-asset-item>-->
+     
+      </a-assets>
+
+		<!-- hiro marker & skull animation -->
+        <!-- make note of scale, the fbx export from maya to blender gltf makes the models MUCH smaller than the obj to gltf export-->
+        
+        <!-- Img Target #1 -->
+		<a-marker type='pattern' url='pattern-FossilBird.patt'>
+             <a-entity gltf-model="#Bird" scale= "0.11 0.11 0.11"></a-entity>
+		</a-marker>  
+        
+         <!-- Img Target #2 -->
+		<a-marker type='pattern' url='pattern-FossilRhino.patt'>
+             <a-entity gltf-model="#Rhino" scale= "1,1,1"></a-entity>
+		</a-marker> 
+        
+          <!-- Img Target #3 -->
+		<a-marker type='pattern' url='pattern-FossilTurtle.patt'>
+             <a-entity gltf-model="#Turtle" scale= "0.05 0.05 0.05"></a-entity>
+		</a-marker>  
+        
+         <!-- Img Target #4 -->
+		<a-marker type='pattern' url='pattern-FossilPuzzles.patt'>
+             <a-entity gltf-model="#Earth" scale= "0.05 0.05 0.05"></a-entity>
+		</a-marker> 
+        
+        
+
+		<!-- tatoo marker & skull with image texture -->
+<!--
+        <a-marker type='pattern' url='../../data/data/skull-obj/pattern-FossilPuzzles.patt'>
+                <a-obj-model gltf-model="#Turtle" scale="0.05 0.05 0.05" rotation= "0 -100 89" position= "0 0 .5" animation="property: rotation; to:360 -100 90; dur: 5000; easing: linear; loop: true"></a-obj-model>
+		</a-marker>
+-->
+
+		<!-- mondrian  marker with skull obj -->
+<!--
+        <a-marker type='pattern' url='pattern-FossilTurtle.patt'>
+            <a-obj-model src="#skull-obj" mtl="#skull-mtl" scale="0.08 0.08 0.08" rotation= "0 -100 89" position= "0 0 .5"></a-obj-model>
+		</a-marker>
+-->
+        
+        
+        
+
+		<!-- add a simple camera -->
+		<a-entity camera></a-entity>
+	</a-scene>
+</body>
+</html>
