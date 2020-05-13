@@ -17,10 +17,10 @@
         
       <a-assets>
         <!-- import obj test export from maya: obj & mtl  -->
-        <a-asset-item id="Bird" src="models/GLTF/AnnaBird.gltf"></a-asset-item>
-        <a-asset-item id="Rhino" src="models/GLTF/AnnaRhino.gltf"></a-asset-item>
-        <a-asset-item id="Turtle" src="models/GLTF/AnnaTurtle.gltf"></a-asset-item>
-        <a-asset-item id="Earth" src="models/GLTF/AnnaEarth.gltf"></a-asset-item>
+        <a-asset-item id="Bird" src="models/GLTF/BirdAnimate.gltf"></a-asset-item>
+        <a-asset-item id="Rhino" src="models/GLTF/RhinoAnimate.gltf"></a-asset-item>
+        <a-asset-item id="Turtle" src="models/GLTF/TurtleAnimate.gltf"></a-asset-item>
+        <a-asset-item id="Earth" src="models/GLTF/EarthAnimate.gltf"></a-asset-item>
 <!--        <a-asset-item id="AnnaEarth-mtl" src="../../data/data/skull-obj/AnnaEarth.mtl"></a-asset-item>-->
         
         <!-- import male02: obj & mtl  -->
@@ -42,22 +42,22 @@
         
         <!-- Img Target #1 -->
 		<a-marker type='pattern' url='pattern-FossilBird.patt'>
-             <a-entity gltf-model="#Bird" scale= "0.11 0.11 0.11"></a-entity>
+             <a-entity gltf-model="#Bird" scale= "10 10 10" rotation= "0 -90 90" position= "0 0 0.45" animation-mixer></a-entity>
 		</a-marker>  
         
          <!-- Img Target #2 -->
 		<a-marker type='pattern' url='pattern-FossilRhino.patt'>
-             <a-entity gltf-model="#Rhino" scale= "1,1,1"></a-entity>
+             <a-entity gltf-model="#Rhino" scale= "8 8 8" rotation= "0 90 -90" position= "-0.15 0 0.25" animation-mixer></a-entity>
 		</a-marker> 
         
           <!-- Img Target #3 -->
 		<a-marker type='pattern' url='pattern-FossilTurtle.patt'>
-             <a-entity gltf-model="#Turtle" scale= "0.05 0.05 0.05"></a-entity>
+             <a-entity gltf-model="#Turtle" scale= "6 6 6" rotation= "0 0 0" position= "0 0 0.10" animation-mixer></a-entity>
 		</a-marker>  
         
          <!-- Img Target #4 -->
 		<a-marker type='pattern' url='pattern-FossilPuzzles.patt'>
-             <a-entity gltf-model="#Earth" scale= "0.05 0.05 0.05"></a-entity>
+             <a-entity gltf-model="#Earth" scale= "6 6 6" rotation= "0 180 0" animation-mixer></a-entity>
 		</a-marker> 
         
         
